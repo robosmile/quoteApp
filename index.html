@@ -4,6 +4,17 @@
 <title>Quote App</title>
     </head>
     <body>
+        <script>
+            // Requiring fs module in which 
+            // readFile function is defined.
+            const fs = require('fs')
+              
+            fs.readFile('quoteFile.txt', (err, data) => {
+                if (err) throw err;
+              
+                console.log(data.toString());
+            })
+            </script>
 <h1>This is a Quote App</h1>
     </body>
 </html>
