@@ -1,20 +1,15 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
+        <meta charset="UTF-8" />
 <title>Quote App</title>
     </head>
     <body>
         <script>
-            // Requiring fs module in which 
-            // readFile function is defined.
-            const fs = require('fs')
-              
-            fs.readFile('quoteFile.txt', (err, data) => {
-                if (err) throw err;
-              
-                console.log(data.toString());
-            })
+            fetch('quoteFile.txt').then(response => response.text())
+  .then(text => console.log(text))
             </script>
-<h1>This is a Quote App</h1>
+        <h1>This is a Quote App</h1>
+        <span id="theQuote"></p>
     </body>
 </html>
