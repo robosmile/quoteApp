@@ -1,0 +1,12 @@
+{
+    "name": "quoteapp",
+    "version": "1.0.0",
+    "description": "app to display quotes",
+    "author": "robosmile@gmail.com",
+    "scripts": {
+        "serve": "serve"
+    },
+    "devDependencies": {
+        "serve": "^14.0.1"
+    }
+}
