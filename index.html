@@ -2,14 +2,30 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-<title>Quote App</title>
+        <title>Quote App</title>
+        <script src="./getQuote.js"></script>
     </head>
     <body>
         <script>
-            fetch('quoteFile.txt').then(response => response.text())
-  .then(text => console.log(text))
-             document.write(response.text)
+  fetch('quoteFile.txt')
+  .then((response) => {
+    if (response.ok) {
+      return response.text();
+    } else {
+      throw new Error("NETWORK RESPONSE ERROR");
+    }
+  })
+  .then(quoteFile => {
+    const paraElt= document.createElement("p");
+    randomQuote = getQuote(quoteFile);
+    paraElt.innerHTML = randomQuote.quote.toString() + "<br>" + randomQuote.author.toString();
+    const quoteDisplay = document.getElementById("fileContents");
+    quoteDisplay.appendChild(paraElt);
+  })
+  .catch((error) => console.error("FETCH ERROR:", error));
             </script>
         <h1>This is a Quote App</h1>
+        <div id="fileContents"></div>
+        
     </body>
 </html>
