@@ -1,5 +1,4 @@
 function getQuote(allQuotes){
-    // debugger;
     let strAllQuotes = new String (allQuotes.toString());
     let lines = strAllQuotes.split('\n');
     let whichQuote = Math.floor(Math.random() * lines.length);
